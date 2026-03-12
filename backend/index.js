@@ -230,7 +230,8 @@ const fetchUser = async (req, res, next)=>{
     }
     else{
         try{
-            const data = jwt.verify(token, 'secret_ecom');
+            // const data = jwt.verify(token, 'secret_ecom');
+            const data = jwt.verify(token, process.env.JWT_SECRET);
             req.user = data.user;
             next();
         } catch(error){
