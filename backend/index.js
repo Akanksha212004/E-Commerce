@@ -1,4 +1,7 @@
-const port = 4000;
+require("dotenv").config();
+
+// const port = 4000;
+const port = process.env.PORT || 4000;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -8,10 +11,14 @@ const path = require("path");
 const cors = require("cors");
 
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+    origin: "*"
+}));
 
 // Database Connection with MongoDB
-mongoose.connect("mongodb+srv://greatStackEcommerce:Kajal*1307@cluster0.lrrewte.mongodb.net/e-commerce");
+// mongoose.connect("mongodb+srv://greatStackEcommerce:Kajal*1307@cluster0.lrrewte.mongodb.net/e-commerce");
+mongoose.connect(process.env.MONGO_URI);
 
 // API Creation
 
@@ -35,7 +42,8 @@ app.use('/images', express.static('upload/images'));
 app.post("/upload", upload.single('product'), (req, res)=>{
     res.json({
         success: 1,
-        image_url: `http://localhost:${port}/images/${req.file.filename}`
+        // image_url: `http://localhost:${port}/images/${req.file.filename}`
+        image_url: `${req.protocol}://${req.get("host")}/images/${req.file.filename}`
     });
 });
 
@@ -169,7 +177,8 @@ app.post('/signup', async(req, res)=>{
         }
     }
 
-    const token = jwt.sign(data,'secret_ecom');
+    // const token = jwt.sign(data,'secret_ecom');
+    const token = jwt.sign(data, process.env.JWT_SECRET);
     res.json({success:true,token});
 });
 
@@ -184,7 +193,8 @@ app.post('/login', async(req, res)=>{
                     id:user.id
                 }
             }
-            const token = jwt.sign(data,'secret_ecom');
+            // const token = jwt.sign(data,'secret_ecom');
+            const token = jwt.sign(data, process.env.JWT_SECRET);
             res.json({success:true,token});
         }
         else{
