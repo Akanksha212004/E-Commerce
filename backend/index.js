@@ -10,6 +10,12 @@ const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
 
+const fs = require("fs");
+
+if (!fs.existsSync("./upload/images")) {
+    fs.mkdirSync("./upload/images", { recursive: true });
+}
+
 app.use(express.json());
 // app.use(cors());
 app.use(cors({
