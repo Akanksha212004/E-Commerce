@@ -27,10 +27,7 @@ if (!fs.existsSync("./upload/images")) {
 app.use(express.json());
 // app.use(cors());
 app.use(cors({
-  origin: [
-    "https://e-commerce-3sd2.vercel.app",
-    "https://e-commerce-chi-five-54.vercel.app"
-  ],
+  origin: "*",
   methods: ["GET","POST","PUT","DELETE"],
   allowedHeaders: ["Content-Type","Authorization","auth-token"]
 }));
