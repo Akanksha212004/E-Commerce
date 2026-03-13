@@ -4,6 +4,9 @@ require("dotenv").config();
 const port = process.env.PORT || 4000;
 const express = require("express");
 const app = express();
+
+app.set('trust proxy', true);
+
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const multer = require("multer");
