@@ -22,7 +22,10 @@ if (!fs.existsSync("./upload/images")) {
 app.use(express.json());
 // app.use(cors());
 app.use(cors({
-    origin: "*"
+  origin: [
+    "https://e-commerce-3sd2-ar4vtqruo-akankshas-projects-8078ced4.vercel.app"
+  ],
+  credentials: true
 }));
 
 // Database Connection with MongoDB
