@@ -8,15 +8,14 @@ This application provides a complete online shopping experience where users can 
 
 ## 🚀 Live Demo
 
-### User Website
-https://e-commerce-3sd2.vercel.app
+Frontend:
+https://e-commerce-frontend-five-mu.vercel.app
 
-### Admin Panel
+Admin Panel:
 https://e-commerce-chi-five-54.vercel.app
 
-### Backend API
-https://e-commerce-backend-ac08.onrender.com
-
+Backend API:
+https://e-commerce-backend-apl4.onrender.com
 ---
 
 ## 🛠 Tech Stack
@@ -50,23 +49,26 @@ https://e-commerce-backend-ac08.onrender.com
 ## ✨ Features
 
 ### User Features
-- Browse products by category
-- View detailed product pages
-- Add products to cart
-- Remove items from cart
-- User signup & login with JWT authentication
-- Secure checkout process
-- Cash on Delivery (COD)
-- Online payment via Razorpay
-- View order history ("My Orders")
-- Responsive UI for better user experience
+
+* Browse products
+* View product details
+* Add items to cart
+* Remove items from cart
+* User signup & login
+* Cash on Delivery checkout
+* Razorpay online payments
+* Place orders
+* View order history
+* Address management during checkout
+
 
 ### Admin Features
-- Add new products
-- Upload product images to Cloudinary
-- Delete products
-- Manage product inventory
-- Product management dashboard
+
+* Add new products
+* Upload product images
+* Delete products
+* View all listed products
+* Product inventory management
 
 ---
 
