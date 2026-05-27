@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './NewCollections.css';
 import Item from '../Item/Item';
 
-const BACKEND = "http://localhost:4000";
+const BACKEND = "https://e-commerce-backend-apl4.onrender.com";
 
 
 function NewCollections() {

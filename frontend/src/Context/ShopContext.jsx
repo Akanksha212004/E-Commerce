@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 // import all_product from "../Components/Assets/all_product";
 
-const BACKEND = "http://localhost:4000";
+const BACKEND = "https://e-commerce-backend-apl4.onrender.com";
 
 
 export const ShopContext = createContext(null);

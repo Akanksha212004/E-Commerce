@@ -3,7 +3,7 @@ import './PlaceOrder.css';
 import { ShopContext } from '../Context/ShopContext';
 import { useNavigate } from 'react-router-dom';
 
-const BACKEND = 'http://localhost:4000';
+const BACKEND = 'https://e-commerce-backend-apl4.onrender.com';
 
 const PlaceOrder = () => {
   const { getTotalCartAmount, all_product, cartItems, setCartItems } = useContext(ShopContext);

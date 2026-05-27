@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './CSS/LoginSignup.css';
 
-const BACKEND = "http://localhost:4000";
+const BACKEND = "https://e-commerce-backend-apl4.onrender.com";
 
 
 const LoginSignup = () => {

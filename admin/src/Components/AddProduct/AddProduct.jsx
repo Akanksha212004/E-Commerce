@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './AddProduct.css';
 import upload_area from '../../assets/upload_area.svg';
 
-const BACKEND = "http://localhost:4000";
+const BACKEND = "https://e-commerce-backend-apl4.onrender.com";
 
 
 const AddProduct = () => {
