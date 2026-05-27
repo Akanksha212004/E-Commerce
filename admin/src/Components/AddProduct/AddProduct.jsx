@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './AddProduct.css';
 import upload_area from '../../assets/upload_area.svg';
 
+const BACKEND = "http://localhost:4000";
+
+
 const AddProduct = () => {
 
     const [image, setImage] = useState(false);
@@ -29,7 +32,7 @@ const AddProduct = () => {
         let formData = new FormData();
         formData.append('product', image);
 
-        await fetch('https://e-commerce-backend-ac08.onrender.com/upload',{
+        await fetch(`${BACKEND}/upload`,{
             method:'POST',
             headers:{
                 Accept:'application/json',
@@ -41,7 +44,7 @@ const AddProduct = () => {
         {
             product.image = responseData.image_url;
             console.log(product);
-            await fetch('https://e-commerce-backend-ac08.onrender.com/addproduct',{
+            await fetch(`${BACKEND}/addproduct`,{
                 method:"POST",
                 headers:{
                     Accept:'application/json',

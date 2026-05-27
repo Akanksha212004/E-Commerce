@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import './NewCollections.css';
 import Item from '../Item/Item';
 
+const BACKEND = "http://localhost:4000";
+
+
 function NewCollections() {
 
     const [new_collection, setNew_collection] = useState([]);
 
     useEffect(()=>{
-        fetch('https://e-commerce-backend-ac08.onrender.com/newcollections')
+        fetch(`${BACKEND}/newcollections`)
         .then((response)=>response.json())
         .then((data)=>setNew_collection(data));
     }, []);

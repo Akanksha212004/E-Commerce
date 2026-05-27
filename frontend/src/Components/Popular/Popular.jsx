@@ -3,12 +3,15 @@ import './Popular.css';
 // import data_product from '../Assets/data';
 import Item from '../Item/Item';
 
+const BACKEND = "http://localhost:4000";
+
+
 const Popular = () => {
 
   const [popularProducts, setPopularProducts] = useState([]);
 
   useEffect(()=>{
-    fetch('https://e-commerce-backend-ac08.onrender.com/popularinwomen')
+    fetch(`${BACKEND}/popularinwomen`)
     .then((response)=>response.json())
     .then((data)=>setPopularProducts(data));
   },[]);

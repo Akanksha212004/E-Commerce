@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './ListProduct.css';
 import cross_icon from '../../assets/cross_icon.png';
+import BACKEND from '../../../../frontend/src/config';
+
+const BACKEND = "http://localhost:4000";
+
 
 const ListProduct = () => {
 
   const [allproducts, setAllProducts] = useState([]);
 
   const fetchInfo = async () => {
-    await fetch('https://e-commerce-backend-ac08.onrender.com/allproducts')
+    await fetch(`${BACKEND}/allproducts`)
       .then((res) => res.json())
       .then((data) => { setAllProducts(data) });
   }
@@ -17,7 +21,7 @@ const ListProduct = () => {
   }, []);
 
   const remove_product = async (id) => {
-    await fetch('https://e-commerce-backend-ac08.onrender.com/removeproduct', {
+    await fetch(`${BACKEND}/removeproduct`, {
       method:'POST',
       headers:{
         Accept:'application/json',

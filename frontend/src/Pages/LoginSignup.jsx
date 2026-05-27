@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import './CSS/LoginSignup.css';
 
+const BACKEND = "http://localhost:4000";
+
+
 const LoginSignup = () => {
 
   const [state, setState] = useState("Login");
@@ -17,7 +20,7 @@ const LoginSignup = () => {
   const login = async()=>{
     console.log("Login Function Executed", formData);
     let responseData;
-    await fetch('https://e-commerce-backend-ac08.onrender.com/login',{
+    await fetch(`${BACKEND}/login`,{
       method:'POST',
       headers:{
         Accept:'application/form-data',
@@ -38,7 +41,7 @@ const LoginSignup = () => {
   const signup = async()=>{
     console.log("Sign Up Function Executed", formData);
     let responseData;
-    await fetch('https://e-commerce-backend-ac08.onrender.com/signup',{
+    await fetch(`${BACKEND}/signup`,{
       method:'POST',
       headers:{
         Accept:'application/form-data',

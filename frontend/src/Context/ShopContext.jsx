@@ -1,6 +1,9 @@
 import React, { createContext, useEffect, useState } from "react";
 // import all_product from "../Components/Assets/all_product";
 
+const BACKEND = "http://localhost:4000";
+
+
 export const ShopContext = createContext(null);
 
 const getDefaultCart = () => {
@@ -18,12 +21,12 @@ const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState(getDefaultCart());
 
     useEffect(()=>{
-        fetch('https://e-commerce-backend-ac08.onrender.com/allproducts')
+        fetch(`${BACKEND}/allproducts`)
         .then((response)=>response.json())
         .then((data)=>setAll_Product(data))
 
         if(localStorage.getItem('auth-token')){
-            fetch('https://e-commerce-backend-ac08.onrender.com/getcart',{
+            fetch(`${BACKEND}/getcart`,{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -41,7 +44,7 @@ const ShopContextProvider = (props) => {
         if(localStorage.getItem('auth-token')){
             setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}));
 
-            fetch('https://e-commerce-backend-ac08.onrender.com/addtocart',{
+            fetch(`${BACKEND}/addtocart`,{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -60,7 +63,7 @@ const ShopContextProvider = (props) => {
     const removeFromCart = (itemId) => {
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}));
         if(localStorage.getItem('auth-token')){
-            fetch('https://e-commerce-backend-ac08.onrender.com/removefromcart',{
+            fetch(`${BACKEND}/removefromcart`,{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -99,7 +102,15 @@ const ShopContextProvider = (props) => {
         return totalItem;
     }
 
-    const contextValue = {getTotalCartItems, getTotalCartAmount, all_product, cartItems, addToCart, removeFromCart};
+    const contextValue = {
+        getTotalCartItems, 
+        getTotalCartAmount, 
+        all_product, 
+        cartItems,
+        setCartItems, 
+        addToCart, 
+        removeFromCart
+    };
 
     return(
         <ShopContext.Provider value={contextValue}>

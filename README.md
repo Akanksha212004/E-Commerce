@@ -1,87 +1,94 @@
-# MERN E-Commerce Website
+# 🛍 MERN E-Commerce Website
 
-A full-stack E-Commerce web application built using the **MERN Stack (MongoDB, Express, React, Node.js)**.
-The application allows users to browse products, add items to the cart, and manage products through an admin panel.
+A full-stack **E-Commerce web application** built using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)**.
+
+This application provides a complete online shopping experience where users can browse products, manage their cart, place orders, and make payments online. It also includes a dedicated **admin panel** for product management.
 
 ---
 
 ## 🚀 Live Demo
 
-Frontend:
+### User Website
 https://e-commerce-3sd2.vercel.app
 
-Admin Panel:
+### Admin Panel
 https://e-commerce-chi-five-54.vercel.app
 
-Backend API:
+### Backend API
 https://e-commerce-backend-ac08.onrender.com
 
 ---
 
 ## 🛠 Tech Stack
 
-Frontend
+### Frontend
+- React.js
+- React Router DOM
+- Context API
+- CSS3
 
-* React.js
-* React Router
-* CSS
+### Backend
+- Node.js
+- Express.js
+- JWT Authentication
+- Multer
+- Razorpay Integration
 
-Backend
+### Database
+- MongoDB Atlas
+- Mongoose
 
-* Node.js
-* Express.js
-* JWT Authentication
-* Multer
+### Image Storage
+- Cloudinary
 
-Database
-
-* MongoDB Atlas
-
-Image Storage
-
-* Cloudinary
-
-Deployment
-
-* Vercel (Frontend & Admin)
-* Render (Backend)
+### Deployment
+- Vercel (Frontend + Admin Panel)
+- Render (Backend)
 
 ---
 
 ## ✨ Features
 
-User Features
+### User Features
+- Browse products by category
+- View detailed product pages
+- Add products to cart
+- Remove items from cart
+- User signup & login with JWT authentication
+- Secure checkout process
+- Cash on Delivery (COD)
+- Online payment via Razorpay
+- View order history ("My Orders")
+- Responsive UI for better user experience
 
-* Browse products
-* View product details
-* Add items to cart
-* Remove items from cart
-* User signup & login
-
-Admin Features
-
-* Add new products
-* Upload product images
-* Delete products
-* Manage product inventory
+### Admin Features
+- Add new products
+- Upload product images to Cloudinary
+- Delete products
+- Manage product inventory
+- Product management dashboard
 
 ---
 
 ## 📂 Project Structure
 
-E-Commerce
+```bash
+E-Commerce/
 │
-├── frontend (User website)
-├── admin (Admin dashboard)
-├── backend (API server)
-│
+├── frontend/    # User website
+├── admin/       # Admin dashboard
+├── backend/     # API server
 └── README.md
+```
 
 ---
 
 ## ⚙️ Environment Variables
 
-Create a `.env` file inside the backend folder and add:
+Create a `.env` file inside the `backend` folder and add:
+
+```env
+PORT=4000
 
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
@@ -90,76 +97,122 @@ CLOUDINARY_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
 
+RAZORPAY_KEY_ID=your_razorpay_key
+RAZORPAY_KEY_SECRET=your_razorpay_secret
+```
+
 ---
 
 ## 📦 Installation
 
-Clone the repository
+### Clone the Repository
 
+```bash
 git clone https://github.com/Akanksha212004/E-Commerce.git
+```
 
-Go into the project folder
+### Navigate to Project Folder
 
+```bash
 cd E-Commerce
+```
 
-Install backend dependencies
+### Install Backend Dependencies
 
+```bash
 cd backend
 npm install
+```
 
-Install frontend dependencies
+### Install Frontend Dependencies
 
+```bash
 cd ../frontend
 npm install
+```
 
-Install admin dependencies
+### Install Admin Panel Dependencies
 
+```bash
 cd ../admin
 npm install
+```
 
 ---
 
 ## ▶ Running the Project
 
-Run backend
+### Start Backend Server
 
+```bash
 cd backend
 npm start
+```
 
-Run frontend
+### Start Frontend
 
+```bash
 cd frontend
 npm start
+```
 
-Run admin panel
+### Start Admin Panel
 
+```bash
 cd admin
 npm start
+```
 
 ---
 
-## 📸 Image Storage
+## 💳 Payment Integration
 
-Product images are uploaded to **Cloudinary**, which ensures:
+This project supports:
 
-* Permanent image storage
-* Faster image delivery using CDN
-* No data loss on server redeploy
+- **Cash on Delivery (COD)**
+- **Razorpay Online Payments**
+
+Test payments can be performed using Razorpay test credentials in development mode.
+
+---
+
+## 📸 Image Management
+
+Product images are uploaded and stored using **Cloudinary**, which provides:
+
+- Secure cloud image storage
+- Fast image delivery via CDN
+- Reliable asset persistence after redeployment
+
+---
+
+## 🔐 Authentication
+
+User authentication is implemented using **JWT (JSON Web Tokens)**.
+
+Features include:
+- User Signup
+- User Login
+- Protected cart/order routes
+- Secure API access
 
 ---
 
 ## 📌 Future Improvements
 
-* Payment gateway integration (Stripe)
-* Product search and filters
-* Order management system
-* User profile page
+- Product search functionality
+- Advanced filtering & sorting
+- Wishlist feature
+- Order cancellation
+- Admin order status updates
+- User profile management
+- Payment success/failure email notifications
 
 ---
 
 ## 👩‍💻 Author
 
-Akanksha Yadav
+**Akanksha Yadav**
 
-GitHub
+GitHub:  
 https://github.com/Akanksha212004
