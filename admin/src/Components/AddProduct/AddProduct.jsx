@@ -4,7 +4,6 @@ import upload_area from '../../assets/upload_area.svg';
 
 const BACKEND = "https://e-commerce-backend-apl4.onrender.com";
 
-
 const AddProduct = () => {
 
     const [image, setImage] = useState(false);
