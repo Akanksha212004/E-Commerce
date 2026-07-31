@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './ListProduct.css';
 import cross_icon from '../../assets/cross_icon.png';
-import BACKEND from '../../../../frontend/src/config';
+// import BACKEND from '../../../../frontend/src/config';
 
 const BACKEND = "https://e-commerce-backend-apl4.onrender.com";
 
