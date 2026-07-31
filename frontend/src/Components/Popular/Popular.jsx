@@ -3,7 +3,7 @@ import './Popular.css';
 // import data_product from '../Assets/data';
 import Item from '../Item/Item';
 
-const BACKEND = "https://e-commerce-backend-apl4.onrender.com";
+const BACKEND = "https://e-commerce-backend-ac08.onrender.com";
 
 
 const Popular = () => {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Orders.css';
 
-const BACKEND = 'https://e-commerce-backend-apl4.onrender.com';
+const BACKEND = 'https://e-commerce-backend-ac08.onrender.com';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
